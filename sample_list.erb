@@ -1,0 +1,40 @@
+<%# -*- coding="utf-8" -*-%>
+<% require "rubygems" %>
+<% require "dbi" %>
+
+<% dbh = DBI.connect( 'DBI:SQLite3:sample.db' ) %>
+<% sth = dbh.execute("select * from sampleid;") %>
+
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="default.css">
+	<title>サンプルプログラム</title>
+</head>
+
+<body>
+	<h1>データの表示</h1>
+	<p><a href="index.html">処理メニューに戻る</a></p>
+	<div class="list">
+		<form method="post" action="list">
+		<table>
+			<tr>
+<%			sth.column_names.each do |fname| %>
+					<th><%= "#{fname}" %></th>
+<%			end %>
+			</tr>
+			
+<%		sth.each do |row| %>
+				<tr>
+<%				row.each_with_name do |val, fname| %>
+						<td><%= "#{val.to_s}" %></td>
+<%				end %>
+				</tr>
+<%		end %>
+		</table>
+	</div>
+</body>
+</html>
+
+<% sth.finish %>
+<% dbh.disconnect %>

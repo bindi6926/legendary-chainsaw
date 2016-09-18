@@ -1,0 +1,31 @@
+<%# -*- coding: utf-8 -*- %>
+
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="default.css">
+	<title>サンプルプログラム</title>
+</head>
+
+<body>
+	<h1>データの登録</h1>
+	<p><a href="index.html">処理メニューに戻る</a></p>
+	<br>
+	<div class="entry">
+		<form method="post" action="entry">
+		<table>
+			<tr>
+				<th>項目名</th><th>データ</th>
+			</tr>
+<%		['id', 'name'].each do |fname| %>
+				<tr>
+					<td><%= fname %></td>
+					<td><input type="text" name="<%=fname%>" size="100"></td>
+				</tr>
+<%		end %>
+		</table>
+		<br>
+		<input type="submit" value="登録" />
+	</div>
+</body>
+</html>
