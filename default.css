@@ -1,0 +1,41 @@
+/* --------------- 共通 --------------- */
+h1 {
+	font-size: 1.5rem;
+	color: white;
+	background-color: navy;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+a {
+	text-decoration: none;
+	font-size: 0.8em
+}
+
+a:hover {
+	color: red;
+}
+
+/* --------------- 処理メニュー画面 --------------- */
+.menu td {
+	border-width: 3px;
+	border-style: solid;
+	border-color: gray;
+	padding: 0.5rem 1rem 0.5rem 1rem
+}
+
+/* --------------- データの表示画面 --------------- */
+.list th {
+	text-align: left;
+	color: green;
+	font-weight: bold;
+}
+/* .list td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+	padding: 0;
+} */
+
+/* --------------- データの登録画面 --------------- */
+
+/* --------------- データの登録完了画面 --------------- */
